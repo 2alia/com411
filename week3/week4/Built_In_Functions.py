@@ -1,0 +1,6 @@
+print("start program")
+print("please enter a character?")
+character: str = input()
+len(range[1])
+ord("116")
+print("the ASC11 code for {t} is {116}")
