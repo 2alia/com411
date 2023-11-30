@@ -1,7 +1,7 @@
 class Hotel:
-    def __init__(self,hotels,name, address,items ,filename="hotels.txt"):
+    def __init__(self,hotel,name, address,items ,filename="hotels.txt"):
         self.my_list = []
-        self.hotel = hotels
+        self.hotel = hotel
         self.name = name
         self.address = address
         self.add_my_breakfast = []
