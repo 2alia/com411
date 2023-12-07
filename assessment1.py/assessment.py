@@ -1,5 +1,5 @@
 class Hotel:
-    def __init__(self,hotel,name, address,items ,filename):
+    def __init__(self,hotel,name, address, items ,filename, connections= None):
         self.my_list = []
         self.hotel = hotel
         self.name = name
@@ -9,6 +9,7 @@ class Hotel:
         self.items = []
         self.filename = filename
         self.hotels = self.load_hotels()
+        self.connections = connections if connections else []
 
 
     def add_to_list(self):
@@ -101,6 +102,23 @@ class Hotel:
         self.address = input("enter your address:")
         self.hotel = input("enter the hotel you want:")
         return self.name, self.address, self.hotel
+
+
+
+    def hotel_map(self):
+        the_park_hotel = Hotel ("Park Hotel", ["Park Cafe", "war memorial"])
+        the_park_cafe = Hotel("Park Cafe", ["Railway Station", "war memorial"])
+         white_horse_pub = Hotel("White Horse Pub", ["The Park Hotel", "The Park Cafe"])
+        railway_station = Hotel("Railway Station", ["Park Cafe", "war memorial"])
+
+
+        poi_map = {
+            "park hotel":
+            "park cafe":
+            "white horse pub":
+            "railway_station":railway_station
+        }
+
     def route_function_hotel(self,hotel_name,destination):
         # Simulated directions
         directions = {
