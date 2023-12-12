@@ -28,3 +28,32 @@ def select_hotel(self):
             if 1 <= choice <= len(self.hotels):
                 return self.hotels[choice - 1]
             print("Invalid choice. Please enter a valid number.")
+
+            def is_empty(self):
+                return len(self.items) == 0
+
+            def push(self, item):
+                self.items.append(item)
+
+            def pop(self):
+                if not self.is_empty():
+                    return self.items.pop()
+                else:
+                    return "stack is empty"
+
+            def peek(self):
+                if not self.is_empty():
+                    return self.items[-1]
+                else:
+                    return "stack is empty"
+
+            def size(self):
+                return len(self.items)
+ def customer_information(self):
+        self.name = input("enter your name: ")
+        self.address = input("enter your address:")
+        self.type = input("enter the type you want: e.g. Sutton, Liverpool , Manchester")
+        self.customer_name(name)
+        self.customer_address(address)
+        self.customer_type(type)
+        return self.type, self.name, self.address
