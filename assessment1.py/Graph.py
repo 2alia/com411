@@ -1,5 +1,5 @@
 from edge import Edge
-from heapq import heappush, heappop
+from heapq import heappush
 class Graph:
     def __init__(self):
         self.node_list = []
@@ -19,12 +19,7 @@ class Graph:
         cur_node = start
         heappush(open_list, start)
         while cur_node != end and len(open_list) > 0:
-            for neighbour, weight in Graph[cur_node].item():
-                new_dist = start.dist + weight
-                if new_dist <  start.dist [neighbour]:
-                    start[neighbour]= cur_node
-                    end[neighbour] = new_dist
-                    heappush(open_list, (new_dist, neighbour))
+                pass
 
 
 
