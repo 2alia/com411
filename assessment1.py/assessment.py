@@ -9,9 +9,26 @@ class Hotel:
         self.name = []
         self.address = []
         self.type = []
+        self.stack = []
 
+    def is_empty(self):
+        return len(self.stack)==0
+    def push(self, item):
+        self.stack.append(item)
+        print(f"Added '{item}' to the stack")
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        else:
+            print("stack is empty")
+            return None
 
-
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        else:
+            print("stack is empty")
+            return None
     # my hotel data is currently incorrect order
     hotels_list = [
         {"name": "Sutton B&B", "ratings": 4.3, "price": 120},
@@ -109,3 +126,5 @@ customer.append_to_break(append_to_breakfast)
 customer.display()
 customer.save_to_json("updated_hotel_data.json")
 customer.make_enquiry()
+customer.push("Sheffield B&B")
+print(customer.peek())
