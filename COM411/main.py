@@ -2,7 +2,7 @@ import csv
 from tui import TUI
 class Disneyland:
     def __init__(self):
-        self.file_path = "Disneyland.csv"
+        self.file_path = "disneyland_reviews.csv"
     def line_dashes(self, title, chr):
         dash_line = chr * len(title)
         print(dash_line)
@@ -13,7 +13,7 @@ class Disneyland:
         browse_name = input("Which park would you like to analyse: ")
         browse_location = input("Enter the location: ")
         review_count = 0
-        file = csv.reader(open("Disneyland.csv"))
+        file = csv.reader(open("disneyland_reviews.csv"))
 
         for row in file:
             if browse_name in row and browse_location in row:

@@ -7,7 +7,7 @@ class Process:
 
     def review_by_park(self,):
         search =  input("which park would your like to review ")
-        file = csv.reader(open("Disneyland.csv"))
+        file = csv.reader(open("disneyland_reviews.csv"))
         review_count = 0
         for row in file:
             if search in row:
@@ -19,7 +19,7 @@ class Process:
         browse_name = input("Which park would you like to analyse: ")
         browse_location = input("Enter the location: ")
         review_count = 0
-        file = csv.reader(open("Disneyland.csv"))
+        file = csv.reader(open("disneyland_reviews.csv"))
 
         for row in file:
             if browse_name in row and browse_location in row:
@@ -34,7 +34,7 @@ class Process:
         browse_year = input("Enter the year: ")
         review_count = 0
         total_count = 0
-        file = csv.reader(open("Disneyland.csv"))
+        file = csv.reader(open("disneyland_reviews.csv"))
 
         for row in file:
             if browse_name in row and browse_year in row[2]:

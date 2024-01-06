@@ -78,7 +78,7 @@ class TUI:
                 if choice == "A":
                     visual.reviewed_park()
                 elif choice == "B":
-                    pass
+                    visual.averages_score_per_park()
 
                 elif choice == "C":
                     pass
