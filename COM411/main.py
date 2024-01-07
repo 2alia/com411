@@ -11,8 +11,6 @@ class Disneyland:
         print(title)
         print(dash_line)
 
-
-
     def run(self):
         title = "Disneyland review Analyser"
         self.line_dashes(title, "-")

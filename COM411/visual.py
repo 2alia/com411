@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
+from datetime import datetime
 
 
 class Visual:
@@ -89,3 +90,46 @@ class Visual:
             plt.show()
         else:
             print("No branches found")
+
+    def park_average_rating_month(self):
+        specify_year = int(input("Enter year: "))
+        park_name = input("Enter the park:")
+        park_ratings = {month: [] for month in range(1, 13)}
+
+        with open("disneyland_reviews.csv", "r") as file:
+            csv_reader = csv.DictReader(file)
+            for entry in csv_reader:
+                review_date = entry["Year_Month"]
+                if review_date != 'Missing':
+                    try:
+                        date = datetime.strptime(review_date, "%Y-%m")
+                        if date.year == specify_year:
+                            month = date.month
+                            park = entry["Branch"].split("-")[0]
+
+                            if park == park_name:
+                                rating = int(entry["Rating"])
+                                park_ratings[month].append(rating)
+
+                    except ValueError:
+                        continue
+
+
+            average_ratings = {month: sum(ratings) / len(ratings) if ratings else 0 for month, ratings in park_ratings.items()}
+            sorted_ratings = sorted(average_ratings.items())
+
+            months = [datetime(specify_year, month,1).strftime("%B %Y")for month, _ in sorted_ratings]
+            ratings = [rating for _, rating in sorted_ratings]
+
+            print("Collected Data:")
+            for i, rating in enumerate(ratings):
+                print(f"{months[i]}, Average Rating: {rating:.2f}")
+
+            plt.figure(figsize=(12, 6))
+            plt.bar(months, ratings)
+            plt.xlabel("Month")
+            plt.ylabel("Average Review")
+            plt.title(f"Average Review Scores per {park_name} in {specify_year} by Month")
+            plt.xticks(rotation=45)
+            plt.tight_layout()
+            plt.show()

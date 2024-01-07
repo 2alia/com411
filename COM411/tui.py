@@ -86,6 +86,6 @@ class TUI:
                 elif choice == "C":
                     visual.top_10_average_high_scores()
                 elif choice == "D":
-                    pass
+                    visual.park_average_rating_month()
                 else:
                     print("Invalid")
